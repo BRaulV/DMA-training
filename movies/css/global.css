@@ -1,0 +1,84 @@
+body { background-color: #5a9385; }
+.row { margin: auto;}
+.img-container img {
+    position: absolute;
+    bottom: 5px;
+}
+.category {
+    text-align: center;
+}
+#btn-category .btn { 
+    transition: all 1s ease;
+    transform: scale(1);
+}
+#btn-category .btn:hover { 
+    border-radius: 0;
+    transform: scale(1.5);
+    color: black;
+}
+#btn-category .btn { border-radius: 10px }
+.joke-container .jumbotron {
+    background-color: yellowgreen;
+}
+.input-group { margin-bottom: 20px; }
+.search-container {
+    height: 500px;
+    margin: 100px;
+}
+.search-inputs {
+    background-color: #8bf2e780;
+    border: 1px solid grey;
+    padding-top: 20px;
+}
+.image-header {
+    background-image: url(../img/slide-1.jpg);
+    background-repeat: none;
+    background-size: cover;
+}
+.img-container {
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 2px;
+    cursor:pointer;
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+}
+.clear-input {
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin-bottom: 15px;
+}
+.article { position: absolute; }
+.description { margin-top: 15px; }
+.pagination { text-align: center; }
+.glyphicon { top: 3px; }
+.glyphicon-star { color: #f8c900; }
+.glyphicon-thumbs-up { color: #2c2ced; }
+.glyphicon-heart { color: #f82300; }
+.clear-input .clear-input-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #846f32b3;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 1px;
+    left: 40px;
+}
+
+.clear-input:hover .clear-input-text {
+    visibility: visible;
+}
+#joke {
+    position: absolute;
+    top: 300px;
+    left: 850px;
+    z-index: 9;
+}
