@@ -2,15 +2,12 @@
 
 # dependencies
 /node_modules
-/nbproject
 
 # testing
 /coverage
 
 # production
 /build
-.history
-.vscode
 
 # misc
 .DS_Store
