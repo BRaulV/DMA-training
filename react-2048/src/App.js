@@ -25,7 +25,7 @@ class App extends Component {
             winScore: 16,
             keyLeft: true,
             keyUp: true,
-            keyRigth: true,
+            keyRight: true,
             keyDown: true,
             gameStatus: 'wait',
             message: ''
@@ -62,7 +62,7 @@ class App extends Component {
             score: 0,
             winScore: 16,
             keyLeft: true,
-            keyRigth: true,
+            keyRight: true,
             keyUp: true,
             keyDown: true,
             gameStatus: 'wait',
@@ -82,7 +82,7 @@ class App extends Component {
             gameStatus: 'wait',
             winScore: this.state.winScore * 2,
             keyLeft: true,
-            keyRigth: true,
+            keyRight: true,
             keyUp: true,
             keyDown: true,
         })
@@ -97,7 +97,7 @@ class App extends Component {
             gameStatus: 'win',
             message: 'You win !',
             keyLeft: false,
-            keyRigth: false,
+            keyRight: false,
             keyUp: false,
             keyDown: false,
         })
@@ -110,7 +110,7 @@ class App extends Component {
     lossGame = () => {
         this.setState({
             keyLeft: false,
-            keyRigth: false,
+            keyRight: false,
             keyUp: false,
             keyDown: false,
             gameStatus: 'loss',
@@ -138,26 +138,26 @@ class App extends Component {
         switch (key) {
             case 'keyLeft':
                 if (matrixChange && keyPressTimes < 2) {
-                    if (!this.state.keyLeft) this.setState({ keyRigth: true });
+                    if (!this.state.keyLeft) this.setState({ keyRight: true });
                     if (!this.state.keyUp) this.setState({ keyUp: true });
                     if (!this.state.keyDown) this.setState({ keyDown: true });
                 } else {
                     if (this.state.keyLeft) this.setState({ keyLeft: false });
                 }
                 break;
-            case 'keyRigth':
+            case 'keyRight':
                 if (matrixChange && keyPressTimes < 4) {
                     if (!this.state.keyLeft) this.setState({ keyLeft: true });
                     if (!this.state.keyUp) this.setState({ keyUp: true });
                     if (!this.state.keyDown) this.setState({ keyDown: true });
                 } else {
-                    if (this.state.keyRigth) this.setState({ keyRigth: false });
+                    if (this.state.keyRight) this.setState({ keyRight: false });
                 }
                 break;
             case 'keyUp':
                 if (matrixChange && keyPressTimes < 4) {
                     if (!this.state.keyLeft) this.setState({ keyLeft: true });
-                    if (!this.state.keyRigth) this.setState({ keyRigth: true });
+                    if (!this.state.keyRight) this.setState({ keyRight: true });
                     if (!this.state.keyDown) this.setState({ keyDown: true });
                 } else {
                     if (this.state.keyUp) this.setState({ keyUp: false });
@@ -166,7 +166,7 @@ class App extends Component {
             case 'keyDown':
                 if (matrixChange && keyPressTimes < 4) {
                     if (!this.state.keyLeft) this.setState({ keyLeft: true });
-                    if (!this.state.keyRigth) this.setState({ keyRigth: true });
+                    if (!this.state.keyRight) this.setState({ keyRight: true });
                     if (!this.state.keyUp) this.setState({ keyUp: true });
                 } else {
                     if (this.state.keyDown) this.setState({ keyDown: false });
@@ -216,7 +216,7 @@ class App extends Component {
                     score =             {this.state.score}
                     winAt =             {this.state.winScore}
                     left =              {this.state.keyLeft}
-                    rigth =             {this.state.keyRigth}
+                    right =             {this.state.keyRight}
                     up =                {this.state.keyUp}
                     down =              {this.state.keyDown}
                     initialStatus =     {this.state.gameStatus}

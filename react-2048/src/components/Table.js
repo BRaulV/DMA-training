@@ -15,16 +15,22 @@ class Table extends Component {
         this.handleKeyPress = this.handleKeyPress.bind(this);
     }
 
-    componentDidMount() {
+    componentDidUpdate() {
         document.addEventListener('keydown', this.handleKeyPress);
     }
+ 
+    // componentWillReceiveProps() {
+    //     console.log('component will receive props');
+    //     this.setState({ matrix: this.props.initialMatrix });
+    // }
+
     componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKeyPress);
     }
 
     handleKeyPress(e) {
         //check if you cand make another move, if not, the game end
-        if (!(this.props.left || this.props.rigth || this.props.up || this.props.down) && this.props.initialStatus !== 'win') {
+        if (!(this.props.left || this.props.right || this.props.up || this.props.down) && this.props.initialStatus !== 'win') {
             // console.log('You loss !!!');
             this.props.gameLoss();
             return;
@@ -45,8 +51,8 @@ class Table extends Component {
                 break;
             case 39:
                 // console.log('You just pressed >!');
-                if (this.props.rigth) {
-                    this.changeMatrixToRigth();
+                if (this.props.right) {
+                    this.changeMatrixToRight();
                 }
                 break
             case 40:
@@ -170,9 +176,9 @@ class Table extends Component {
     };
 
     /**
-     * Move all matrix number to rigth and collapse where it's possible
+     * Move all matrix number to right and collapse where it's possible
      */
-    changeMatrixToRigth = () => {
+    changeMatrixToRight = () => {
         let matrixChange = false;
         let squaresCollapse = false;
         let score = this.props.score;
@@ -216,7 +222,7 @@ class Table extends Component {
         }
 
         this.props.newScore(score);
-        this.props.keysStatus(matrixChange, squaresCollapse, 'keyRigth');
+        this.props.keysStatus(matrixChange, squaresCollapse, 'keyRight');
 
         // return matrix;
     };
@@ -318,6 +324,7 @@ class Table extends Component {
             <section>
 
                 <Square
+                    // matrix = {this.state.matrix}
                     matrix = {this.props.initialMatrix}
                     status = {this.props.initialStatus}
                     message = {this.props.initialMessage}
