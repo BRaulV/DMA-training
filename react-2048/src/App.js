@@ -22,7 +22,7 @@ class App extends Component {
                 ['', '', '', '']
             ],
             score: 0,
-            winScore: 16,
+            winScore: 2048,
             keyLeft: true,
             keyUp: true,
             keyRight: true,
@@ -33,7 +33,6 @@ class App extends Component {
     }
 
     componentWillMount() {
-        console.log('component will mount');
         this.populateMatrix();
     }
 
@@ -49,7 +48,7 @@ class App extends Component {
     }
 
     /**
-     * start a new game
+     * Start a new game
      */
     onStartNewGame = () => {
         this.setState({
@@ -60,7 +59,7 @@ class App extends Component {
                 ['', '', '', '']
             ],
             score: 0,
-            winScore: 16,
+            winScore: 2048,
             keyLeft: true,
             keyRight: true,
             keyUp: true,
@@ -227,7 +226,6 @@ class App extends Component {
                     continueGame =      {this.onGameContinue}
                     gameWin =           {this.winGame}
                     gameLoss =          {this.lossGame}
-
                 />
 
             </div>

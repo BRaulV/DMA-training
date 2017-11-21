@@ -4,25 +4,18 @@ import Square from './Square';
 
 
 
-
 class Table extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             matrix: props.initialMatrix,
         }
         this.handleKeyPress = this.handleKeyPress.bind(this);
     }
 
-    componentDidUpdate() {
+    componentWillMount() {
         document.addEventListener('keydown', this.handleKeyPress);
     }
- 
-    // componentWillReceiveProps() {
-    //     console.log('component will receive props');
-    //     this.setState({ matrix: this.props.initialMatrix });
-    // }
 
     componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKeyPress);
