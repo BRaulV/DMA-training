@@ -22,7 +22,7 @@ class Table extends Component {
     }
 
     handleKeyPress(e) {
-        //check if you cand make another move, if not, the game end
+        //check if you can make another move, if not, the game end
         if (!(this.props.left || this.props.right || this.props.up || this.props.down) && this.props.initialStatus !== 'win') {
             // console.log('You loss !!!');
             this.props.gameLoss();
@@ -65,7 +65,7 @@ class Table extends Component {
     }
 
     /**
-     * Move all matrix number to left and collapse where it's possible
+     * Move all matrix number to left and collapse them, where it's possible
      */
     changeMatrixToLeft = () => {
         let matrixChange = false;
@@ -106,21 +106,21 @@ class Table extends Component {
         //get one empty pair of indexes if exist
         let indexForNewValue = this.getIndexForNewValue();
 
-        //put a new number at that pair if indexes, randomly between 2 and 4
+        //put a new number at that pair of indexes, randomly between 2 and 4
         if (indexForNewValue) {
             matrix[indexForNewValue.i][indexForNewValue.j] = Math.random() < 0.9 ? 2 : 4;
             matrixChange = true;
         }
 
-        //send the new score to update it
+        //sends the new score to update
         this.props.newScore(score);
 
-        //send values to manage keys status
+        //manage keys status
         this.props.keysStatus(matrixChange, squaresCollapse, 'keyLeft');
     };
 
     /**
-     * Move all matrix number to up and collapse where it's possible
+     * Moves all the numbers in the array to top, and collapse them where it's possible
      */
     changeMatrixToUp = () => {
         let matrixChange = false;
@@ -169,7 +169,7 @@ class Table extends Component {
     };
 
     /**
-     * Move all matrix number to right and collapse where it's possible
+     * Moves all the numbers in the array to right, and collapse them where it's possible
      */
     changeMatrixToRight = () => {
         let matrixChange = false;
@@ -221,7 +221,7 @@ class Table extends Component {
     };
 
     /**
-     * Move all matrix number to down and collapse where it's possible
+     * Moves all the numbers in the array to down, and collapse them where it's possible
      */
     changeMatrixToDown = () => {
         let matrixChange = false;
@@ -297,7 +297,7 @@ class Table extends Component {
     }
 
     /**
-     * Check to see if the player win the game
+     * Check to see if the player was win the game
      */
     checkWin = (matrix) => {
         for (var i = 0; i < matrix.length; i++) {

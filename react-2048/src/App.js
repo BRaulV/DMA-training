@@ -74,7 +74,7 @@ class App extends Component {
     }
 
     /**
-     * Continue the game, and change the double the winScore
+     * Continue the game, and doubles the winScore
      */
     onGameContinue = () => {
         this.setState({
@@ -125,7 +125,7 @@ class App extends Component {
      *      keys status to true is those are false
      *
      * @param bool squaresCollapse
-     *      is use to see if some squares was collapse, if not, randomly choose
+     *      is use to see if some squares have collapsed, if not, randomly choose
      *      if player can use the same key for the next move
      *
      * @param string key
@@ -176,7 +176,7 @@ class App extends Component {
     }
 
     /**
-     * Put the first 2 numbers when the game start
+     * Put the first two numbers when the game start
      */
     populateMatrix = () => {
         let matrixx = this.state.matrix;
